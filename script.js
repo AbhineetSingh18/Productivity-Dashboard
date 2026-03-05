@@ -384,7 +384,7 @@ function weatherFunctionality() {
 
     async function fetchWeather() {
         try {
-            const res = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`);
+            const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`);
             const data = await res.json();
             tempEl.textContent = `${data.current.temp_c}°C`;
             condEl.textContent = data.current.condition.text;
