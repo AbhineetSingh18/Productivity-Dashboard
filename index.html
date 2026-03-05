@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="walnut">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Dashboard</title>
+    <link rel="shortcut icon" href="fav/tree2.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Grain noise texture overlay -->
+    <svg class="noise-svg" xmlns="http://www.w3.org/2000/svg">
+        <filter id="noiseFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.68" numOctaves="3" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+    </svg>
+
+    <div id="main">
+
+        <!-- ── NAV ── -->
+        <nav>
+            <div class="nav-in">
+                <div class="nav-logo">
+                    <span class="logo-pulse"></span>
+                    <h2>Productivity Dashboard</h2>
+                </div>
+                <div class="theme-wrap">
+                    <span class="theme-label">Warm Walnut</span>
+                    <div class="theme" title="Switch theme">
+                        <i class="ri-sun-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ── DASHBOARD ── -->
+        <section class="allElems">
+            <header>
+                <div class="header-overlay"></div>
+                <div class="header1">
+                    <h2 class="header-date"></h2>
+                    <h1 class="header-time"></h1>
+                    <h4 class="header-loc"><i class="ri-map-pin-2-fill"></i></h4>
+                </div>
+                <div class="header2">
+                    <h2 class="header-temp"></h2>
+                    <h3 class="header-cond"></h3>
+                    <div class="weather-pills">
+                        <span class="pill precipitation"></span>
+                        <span class="pill humidity"></span>
+                        <span class="pill wind"></span>
+                    </div>
+                </div>
+            </header>
+
+            <p class="section-eyebrow">Your workspace</p>
+            <div class="allFeatures">
+                <div class="todo elem" data-index="0">
+                    <img src="img/todo.jpg" alt="">
+                    <div class="card-overlay"></div>
+                    <div class="card-info">
+                        <span class="card-tag">Tasks</span>
+                        <h2>To-Do</h2>
+                    </div>
+                </div>
+                <div class="daily elem" data-index="1">
+                    <img src="img/dailyplanner.jpg" alt="">
+                    <div class="card-overlay"></div>
+                    <div class="card-info">
+                        <span class="card-tag">Schedule</span>
+                        <h2>Planner</h2>
+                    </div>
+                </div>
+                <div class="moti elem" data-index="2">
+                    <img src="img/motivation.jpg" alt="">
+                    <div class="card-overlay"></div>
+                    <div class="card-info">
+                        <span class="card-tag">Inspire</span>
+                        <h2>Motivation</h2>
+                    </div>
+                </div>
+                <div class="pomo elem" data-index="3">
+                    <img src="img/pomodoro.jpg" alt="">
+                    <div class="card-overlay"></div>
+                    <div class="card-info">
+                        <span class="card-tag">Focus</span>
+                        <h2>Pomodoro</h2>
+                    </div>
+                </div>
+                <div class="goals elem" data-index="4">
+                    <img src="img/goals.jpg" alt="">
+                    <div class="card-overlay"></div>
+                    <div class="card-info">
+                        <span class="card-tag">Achieve</span>
+                        <h2>Goals</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── TO-DO PANEL ── -->
+        <div class="fullElem todo-list-fullpage">
+            <button data-index="0" type="button" class="back"><i class="ri-arrow-left-line"></i> Back</button>
+            <div class="page-header">
+                <p class="page-eyebrow">Manage</p>
+                <h2>Your Task List</h2>
+            </div>
+            <div class="todo-container">
+                <div class="addTask">
+                    <p class="panel-section-title">New Task</p>
+                    <form>
+                        <input id="task-input" type="text" placeholder="What needs to be done?">
+                        <textarea placeholder="Add details..." cols="30" rows="5"></textarea>
+                        <div class="mark-imp">
+                            <label class="custom-check">
+                                <input type="checkbox" id="check">
+                                <span class="checkmark"></span>
+                                Mark as Important
+                            </label>
+                        </div>
+                        <button type="submit">Add Task <i class="ri-add-line"></i></button>
+                    </form>
+                </div>
+                <div class="allTask">
+                    <div class="task-empty-state">
+                        <i class="ri-check-double-line"></i>
+                        <p>All clear! Add your first task.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── DAILY PLANNER PANEL ── -->
+        <div class="fullElem daily-planner-fullpage">
+            <button data-index="1" type="button" class="back"><i class="ri-arrow-left-line"></i> Back</button>
+            <div class="page-header">
+                <p class="page-eyebrow">Plan</p>
+                <h2>Schedule Your Day</h2>
+            </div>
+            <div class="day-planner"></div>
+        </div>
+
+        <!-- ── MOTIVATION PANEL ── -->
+        <div class="fullElem motivational-fullpage">
+            <button data-index="2" type="button" class="back"><i class="ri-arrow-left-line"></i> Back</button>
+            <div class="motivation-fullPage-container">
+                <div class="motivation-container">
+                    <div class="motivation-wrapper">
+                        <div class="motivation-1">
+                            <h2><i class="ri-double-quotes-l"></i> Quote for the Day</h2>
+                        </div>
+                        <div class="motivation-2">
+                            <h1></h1>
+                        </div>
+                        <div class="motivation-3">
+                            <h2></h2>
+                        </div>
+                        <button class="refresh-quote"><i class="ri-refresh-line"></i> New Quote</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── POMODORO PANEL ── -->
+        <div class="fullElem pomodoro-fullpage">
+            <button data-index="3" type="button" class="back"><i class="ri-arrow-left-line"></i> Back</button>
+            <div class="page-header">
+                <p class="page-eyebrow">Focus</p>
+                <h2>Study With Me</h2>
+            </div>
+            <div class="pomo-center">
+                <div class="pomo-ring-wrap">
+                    <svg class="pomo-ring" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+                        <circle class="ring-bg" cx="110" cy="110" r="100" />
+                        <circle class="ring-progress" cx="110" cy="110" r="100" />
+                    </svg>
+                    <div class="pomo-inner">
+                        <span class="session">Work Session</span>
+                        <h1 class="pomo-display">25:00</h1>
+                        <p class="pomo-sub">Stay focused</p>
+                    </div>
+                </div>
+                <div class="pomo-controls">
+                    <button class="start-timer pomo-btn"><i class="ri-play-fill"></i> Start</button>
+                    <button class="pause-timer pomo-btn"><i class="ri-pause-fill"></i> Pause</button>
+                    <button class="reset-timer pomo-btn"><i class="ri-restart-line"></i> Reset</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── GOALS PANEL ── -->
+        <div class="fullElem daily-goals-fullpage">
+            <button data-index="4" type="button" class="back"><i class="ri-arrow-left-line"></i> Back</button>
+            <div class="page-header">
+                <p class="page-eyebrow">Achieve</p>
+                <h1>Daily Goals</h1>
+            </div>
+            <div class="goals-container">
+                <div class="goals-add">
+                    <form class="goals-form">
+                        <input class="goals-input" type="text" placeholder="Add a new goal for today...">
+                        <button title="goals-submit" type="submit" class="goals-submit"><i class="ri-add-line"></i></button>
+                    </form>
+                </div>
+                <div class="goals-list"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
