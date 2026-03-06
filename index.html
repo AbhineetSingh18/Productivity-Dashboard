@@ -4,10 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productivity Dashboard</title>
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#5c4033">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <link rel="apple-touch-icon" href="fav/tree2.png">
     <link rel="shortcut icon" href="fav/tree2.png" type="image/x-icon">
+
+    <title>Productivity Dashboard</title>
+
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
 <body>
@@ -205,7 +213,8 @@
                 <div class="goals-add">
                     <form class="goals-form">
                         <input class="goals-input" type="text" placeholder="Add a new goal for today...">
-                        <button title="goals-submit" type="submit" class="goals-submit"><i class="ri-add-line"></i></button>
+                        <button title="goals-submit" type="submit" class="goals-submit"><i
+                                class="ri-add-line"></i></button>
                     </form>
                 </div>
                 <div class="goals-list"></div>
@@ -213,6 +222,12 @@
         </div>
 
     </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js');
+        }
+    </script>
 
     <script src="script.js"></script>
 </body>

@@ -1,0 +1,21 @@
+{
+    "name": "Productivity Dashboard",
+    "short_name": "ProDash",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#5c4033",
+    "description": "Your personal productivity dashboard",
+    "icons": [
+        {
+            "src": "fav/logo1.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "fav/logo2.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
